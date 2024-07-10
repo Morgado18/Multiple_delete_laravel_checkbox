@@ -13,7 +13,7 @@
   
     <tbody>
       <tbody>
-        <tr>
+        <tr id="dado">
           <td>
             <input type="checkbox" name="ids" id="ids" value="id_dado_db" class="checkbox_ids">
           </td>
@@ -46,8 +46,8 @@ $(function(e)){
       },
       success:function(response){
         console.log(all_ids)
-        $(all_ids, function(key, val){
-          $('dado'+val).remove() // irá remover da lista no reload the page
+        $.each(all_ids, function(key, val){
+          $('#dado'+val).remove() // irá remover da lista no reload the page
         })
         Swal.fire({
             title: Dado(s)",
